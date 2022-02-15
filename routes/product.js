@@ -6,10 +6,10 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/listjson', async function (req, res) {
-    let customers = await Product.findAll({
+    let products = await Product.findAll({
         include: "orders"
     });
-    res.json(customers);
+    res.json(products);
 });
 
 module.exports = router;
